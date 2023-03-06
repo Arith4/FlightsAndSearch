@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const port = process.env.PORT || 3000;
+const { PORT } = require("./config/serverConfig");
 
 const setUpAndStartServer = async () => {
   const app = express();
@@ -8,8 +8,8 @@ const setUpAndStartServer = async () => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.listen(port, () => {
-    console.log(`Listening to port ${port}`);
+  app.listen(PORT, () => {
+    console.log(`Listening to port ${PORT}`);
   });
 };
 
